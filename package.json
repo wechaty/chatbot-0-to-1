@@ -8,7 +8,7 @@
   },
   "scripts": {
     "postinstall": "check-node-version --node \">= 10\"",
-    "start": "node bot.js"
+    "start": "ts-node bot.ts"
   },
   "repository": {
     "type": "git",
