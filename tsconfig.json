@@ -26,22 +26,15 @@
     , "noImplicitReturns"          : true
     , "noFallthroughCasesInSwitch" : true
     , "strictNullChecks"           : true
-    , "noImplicitAny"              : true
+    , "noImplicitAny"              : false
     , "noUnusedParameters"         : true
     , "noImplicitThis"             : true
   }
   , "exclude": [
       "node_modules/"
     , "dist/"
-    , "tests/fixtures/"
   ]
   , "include": [
-       "app/**/*.ts"
-     , "bin/*.ts"
-     , "bot/**/*.ts"
-     , "examples/**/*.ts"
-     , "scripts/**/*.ts"
-     , "src/**/*.ts"
-     , "tests/**/*.spec.ts"
+       "*.ts"
   ]
 }

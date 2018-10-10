@@ -2,13 +2,12 @@
 {
   "typescript.tsdk": "./node_modules/typescript/lib"
   , "update.channel": "none"
-, "files.exclude": {
-    "dist/": true
-  , "doc/": true
-  , "node_modules/": true
-  , "package/": true
-}
-, "alignment": {
+,
+"files.exclude": {
+  "dist/": true,
+  "doc/": true,
+  "package/": true
+}, "alignment": {
       "operatorPadding": "right"
     , "indentBase":      "firstline"
     , "surroundSpace":   {
