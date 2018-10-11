@@ -30,8 +30,8 @@
     "tslint": "^5.11.0",
     "tslint-config-standard": "^8.0.1",
     "typescript": "3.1.0-dev.20180731",
-    "wechaty": "^0.22.1",
-    "wechaty-puppet-padchat": "^0.17.17"
+    "wechaty": "^0.22.4",
+    "wechaty-puppet-padchat": "^0.17.18"
   },
   "devDependencies": {
     "check-node-version": "^3.2.0"
