@@ -1,26 +1,31 @@
 import LUISClient                    from 'luis-sdk'
 import { generate                  } from 'qrcode-terminal'
 import { Contact, Message, Wechaty } from 'wechaty'
+import { PuppetPadplus             } from 'wechaty-puppet-padplus'
 
 /**
  * Config wechaty, see: https://github.com/chatie/wechaty
  */
-const WECHATY_PUPPET_PADCHAT_TOKEN = 'puppet_padchat_579a8b3a5707e433'
-const puppet = 'wechaty-puppet-padchat'
-const puppetOptions = {
-  token: WECHATY_PUPPET_PADCHAT_TOKEN,
-}
+const token = 'puppet_padplus_f9a4033a7b2f8894'
+// const puppet = 'wechaty-puppet-padchat'
+// const puppetOptions = {
+//   token: WECHATY_PUPPET_PADPLUS_TOKEN,
+// }
+
+const puppet = new PuppetPadplus({
+  token,
+})
+
 const bot = new Wechaty({
   name: 'lijiarui',
   puppet,
-  puppetOptions,
 })
 
 /**
  * Config Luis, see: www.luis.ai
  */
-const APPID = ''
-const APPKEY = ''
+const APPID = '841b05a2-bebf-4b94-a82a-85236679687e'
+const APPKEY = '7dbf6405b5154fbca1a8cce9363feab8'
 const DOMAIN = 'westus.api.cognitive.microsoft.com'
 const LUISclient = LUISClient({
   appId   : APPID,
@@ -86,10 +91,13 @@ async function onMessage (msg: Message) {
 
     // On success of prediction
     onSuccess: async (response) => {
-      if (response.topScoringIntent.intent === 'BookFlight') {
-        await msg.say('你触发了[BookFlight]的意图')
-      } else if (response.topScoringIntent.intent === 'GetWeather') {
-        await msg.say('你触发了[GetWeather]的意图')
+      console.log(JSON.stringify(response))
+      if (response.topScoringIntent.intent === 'Weather.CheckWeatherTime') {
+        await msg.say('意图为：根据天气查询时间')
+      } else if (response.topScoringIntent.intent === 'Weather.CheckWeatherValue') {
+        await msg.say('意图为：根据时间地点查询天气')
+      } else if (response.topScoringIntent.intent === 'Weather.QueryWeather') {
+        await msg.say('意图为：确认天气')
       } else {
         await msg.say('你没有触发任何意图')
       }
