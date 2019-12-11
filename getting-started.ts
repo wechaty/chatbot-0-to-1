@@ -35,9 +35,9 @@ function onLogout (user: Contact) {
 async function onMessage (msg: Message) {
   console.log('StarterBot', msg.toString())
 
-  if (msg.self()) {
-    return
-  }
+  // if (msg.self()) {
+  //   return
+  // }
 
   if (msg.room()) {
     return

@@ -88,6 +88,10 @@ async function onMessage (msg: Message) {
     // On success of prediction
     onSuccess: async (response) => {
       console.log(JSON.stringify(response))
+      if (!response.topScoringIntent) {
+        return
+      }
+
       if (response.topScoringIntent.intent === 'Weather.CheckWeatherTime') {
         await msg.say('意图为：根据天气查询时间')
       } else if (response.topScoringIntent.intent === 'Weather.CheckWeatherValue') {
