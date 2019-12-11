@@ -7,10 +7,6 @@ import { PuppetPadplus             } from 'wechaty-puppet-padplus'
  * Config wechaty, see: https://github.com/chatie/wechaty
  */
 const token = 'puppet_padplus_f9a4033a7b2f8894'
-// const puppet = 'wechaty-puppet-padchat'
-// const puppetOptions = {
-//   token: WECHATY_PUPPET_PADPLUS_TOKEN,
-// }
 
 const puppet = new PuppetPadplus({
   token,
