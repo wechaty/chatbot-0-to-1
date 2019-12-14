@@ -9,9 +9,18 @@ import {
   Wechaty,
 }               from 'wechaty'
 
-import { PuppetPadplus } from 'wechaty-puppet-padplus'
-
 import { generate } from 'qrcode-terminal'
+
+const bot = new Wechaty({ name: 'lijiarui' })
+
+bot.on('scan',    onScan)
+bot.on('login',   onLogin)
+bot.on('logout',  onLogout)
+bot.on('message', onMessage)
+
+bot.start()
+  .then(() => console.log('StarterBot', 'Starter Bot Started.'))
+  .catch(e => console.error('StarterBot', e))
 
 function onScan (qrcode: string, status: ScanStatus) {
   generate(qrcode)  // show qrcode on console
@@ -33,36 +42,26 @@ function onLogout (user: Contact) {
 }
 
 async function onMessage (msg: Message) {
+  const contact = msg.from()
   console.log('StarterBot', msg.toString())
 
-  // if (msg.self()) {
-  //   return
-  // }
-
-  if (msg.room()) {
+  if (msg.self()) {
     return
   }
 
-  if (msg.text().toLowerCase() === 'ding') {
-    await msg.say('dong')
+  if (!contact) {
+    return
+  }
+
+  const room = msg.room()
+
+  if (room) {
+    const topic = await room.topic()
+    if (topic === 'test') {
+      if (msg.text().toLowerCase() === 'ding') {
+        await room.say('dong', contact)
+      }
+    }
+    return
   }
 }
-
-const token = 'puppet_padplus_f9a4033a7b2f8894'
-const puppet = new PuppetPadplus({
-  token,
-})
-
-const bot = new Wechaty({
-  name: 'lijiarui',
-  puppet,
-})
-
-bot.on('scan',    onScan)
-bot.on('login',   onLogin)
-bot.on('logout',  onLogout)
-bot.on('message', onMessage)
-
-bot.start()
-  .then(() => console.log('StarterBot', 'Starter Bot Started.'))
-  .catch(e => console.error('StarterBot', e))

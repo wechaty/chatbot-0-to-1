@@ -1,20 +1,9 @@
 import LUISClient                    from 'luis-sdk'
 import { generate                  } from 'qrcode-terminal'
 import { Contact, Message, Wechaty } from 'wechaty'
-import { PuppetPadplus             } from 'wechaty-puppet-padplus'
-
-/**
- * Config wechaty, see: https://github.com/chatie/wechaty
- */
-const token = 'puppet_padplus_f9a4033a7b2f8894'
-
-const puppet = new PuppetPadplus({
-  token,
-})
 
 const bot = new Wechaty({
   name: 'lijiarui',
-  puppet,
 })
 
 /**
@@ -68,12 +57,13 @@ async function onMessage (msg: Message) {
   const text = msg.text()
   const type = msg.type()
   const room = msg.room()
+  const contact = msg.from()
 
   if (msg.self()) {
     return
   }
 
-  if (room) {
+  if (!contact) {
     return
   }
 
@@ -83,36 +73,42 @@ async function onMessage (msg: Message) {
 
   console.log(msg.toString())
 
-  LUISclient.predict(text, {
+  if (room) {
+    const topic = await room.topic()
+    if (topic === 'test') {
+      LUISclient.predict(text, {
 
-    // On success of prediction
-    onSuccess: async (response) => {
-      console.log(JSON.stringify(response))
-      if (!response.topScoringIntent) {
-        return
-      }
+        // On success of prediction
+        onSuccess: async (response) => {
+          console.log(JSON.stringify(response))
+          if (!response.topScoringIntent) {
+            return
+          }
 
-      if (response.topScoringIntent.intent === 'Weather.CheckWeatherTime') {
-        await msg.say('意图为：根据天气查询时间')
-      } else if (response.topScoringIntent.intent === 'Weather.CheckWeatherValue') {
-        await msg.say('意图为：根据时间地点查询天气')
-      } else if (response.topScoringIntent.intent === 'Weather.QueryWeather') {
-        await msg.say('意图为：确认天气')
-      } else {
-        await msg.say('你没有触发任何意图')
-      }
+          if (response.topScoringIntent.intent === 'Weather.CheckWeatherTime') {
+            await room.say('意图为：根据天气查询时间', contact)
+          } else if (response.topScoringIntent.intent === 'Weather.CheckWeatherValue') {
+            await room.say('意图为：根据时间地点查询天气', contact)
+          } else if (response.topScoringIntent.intent === 'Weather.QueryWeather') {
+            await room.say('意图为：确认天气', contact)
+          } else {
+            await room.say('你没有触发任何意图', contact)
+          }
 
-      if (response.entities.length > 0) {
-        await msg.say('触发的实体信息为:')
-        for (let i = 1; i <= response.entities.length; i++) {
-          await msg.say(i + '- ' + response.entities[i - 1].entity)
+          if (response.entities.length > 0) {
+            await room.say('触发的实体信息为:', contact)
+            for (let i = 1; i <= response.entities.length; i++) {
+              await room.say(i + '- ' + response.entities[i - 1].entity, contact)
+            }
+          }
+        },
+
+        // On failure of prediction
+        onFailure: (err: undefined | Error) => {
+          console.error(err)
         }
-      }
-    },
-
-    // On failure of prediction
-    onFailure: (err: undefined | Error) => {
-      console.error(err)
+      })
     }
-  })
+    return
+  }
 }
