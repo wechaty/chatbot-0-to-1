@@ -10,6 +10,17 @@
 
 ![Chatbot 0 to 1](docs/images/chatbot-0-to-1.jpg)
 
+## English Introduction
+
+《Chatbot Zero to One: Practice Guide to Conversational Interaction Design》contains 5 parts.
+
+- Part 1 talks about Chatbot scenarios and its classification from the development of artificial intelligence to promote an interactive dialogue perspective.
+- Part 2 and Part 3  introduce the entire Chatbot lifecycle: requirements analysis, process design, data processing, scriptwriting, system construction, dialog task evaluation, IM channel integration, operational feedback.
+- Part 4 shows Chatbot practical operation case based on the Chatbot lifecycle.
+- Part 5 summarizes the limitations of the current dialogue interaction and looks forward to the Chatbot future as well as the opportunity to develop Chatbot based on artificial intelligence.
+
+《Chatbot Zero to One: Practice Guide to Conversational Interaction Design》 is suitable to readers who want to work in the Chatbot industry, especially for decision-makers who are considering entering the business in the Chatbot field, product managers and project managers who are about to be engaged in the professional work of Chatbot, and developers who want to understand the workflow in the Chatbot field.
+
 ## Microsoft Ignite the Tour 2019 Beijing
 
 虽然 Chatbot 已经成为互联网业界和该投资领域的热点之一，也在或深或浅的融入和影响着大家的生活，但是开发一个 Chatbot 门槛依然非常高。我们希望可以让熟悉业务流程的人，不需要任何数学能力、算法能力、软件能力和工程能力，也能搭建符合企业业务流程的 Chatbot。为了解决这个问题，我们根据即将出版的书籍《Chatbot 从 0 到 1》，围绕对话系统的生命周周期，讲述如何利用微软的 Congnitive Service 搭建聊天机器人并提供实战练习。
