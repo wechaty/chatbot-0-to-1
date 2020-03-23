@@ -30,4 +30,4 @@ npm start
 ## Authors
 
 - [Rui](https://github.com/lijiarui),[(李佳芮)](https://lijiarui.github.io) Co-author of [Wechaty](https://github.com/wechaty/wechaty), Founder of [JuziBot](https://www.botorange.com/), Microsoft AI MVP
-- [Huan](https://github.com/huan) [(李卓桓)](http://linkedin.com/in/zixia) Co-Author of [Wechaty](https://github.com/wechaty/wechaty), Microsoft Regional Director, <zixia@zixia.net>
+- [Huan](https://github.com/huan) [(李卓桓)](http://linkedin.com/in/zixia) Tencent TVP of Chatbot, Microsoft Regional Director, <zixia@zixia.net>
