@@ -10,7 +10,9 @@
 
 ![Chatbot 0 to 1](docs/images/chatbot-0-to-1.jpg)
 
-### 加入我们
+### 作者互动交流群
+
+扫码加我微信，加入Chatbot 从 0 到 1 动手实验群，与作者互动~
 
 ![join us](docs/images/joinus.png)
 
