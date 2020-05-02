@@ -12,22 +12,23 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lijiarui/microsoft-summit-chatbot-course"
+    "url": "git+https://github.com/lijiarui/chatbot-zero-to-one"
   },
   "keywords": [],
   "author": "Jiarui Li <ruiruibupt@gmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/lijiarui/microsoft-summit-chatbot-course/issues"
+    "url": "https://github.com/lijiarui/chatbot-zero-to-one/issues"
   },
-  "homepage": "https://github.com/lijiarui/microsoft-summit-chatbot-course#readme",
+  "homepage": "https://github.com/lijiarui/chatbot-zero-to-one#readme",
   "dependencies": {
     "@types/node": "^10.10.1",
     "luis-sdk": "^1.0.1",
     "npm": "^6.4.1",
     "qrcode-terminal": "^0.12.0",
+    "simple-qnamaker": "0.0.2",
     "ts-node": "^7.0.0",
-    "tslint": "^5.11.0",
+    "tslint": "^5.20.1",
     "tslint-config-standard": "^8.0.1",
     "typescript": "3.1.0-dev.20180731",
     "wechaty": "^0.29.8",
