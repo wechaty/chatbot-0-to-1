@@ -14,6 +14,10 @@ import {
 
 import { generate } from 'qrcode-terminal'
 
+import dotenv       from 'dotenv'
+
+dotenv.config()
+
 const qa = simpleQnAMaker({
   endpointKey    : 'bc138303-260a-42fa-b4d4-3d69db88922d',
   host           : 'https://juzibot-investment.azurewebsites.net/qnamaker',
@@ -27,7 +31,11 @@ const bot = new Wechaty({
 })
 
 if (!process.env.PUPPET_PADPLUS_TOKEN) {
-  console.log('你需要一个 Padplus Token 才能运行此机器人，点击链接加入作者交流群，了解如何获取token： https://github.com/lijiarui/chatbot-zero-to-one#%E4%BD%9C%E8%80%85%E4%BA%92%E5%8A%A8%E4%BA%A4%E6%B5%81%E7%BE%A4')
+  console.log(`
+    你需要一个 Padplus Token 才能运行此机器人~
+    点击链接加入作者交流群，了解如何获取token：
+    https://github.com/lijiarui/chatbot-zero-to-one#作者互动交流群
+    `)
   process.exit(1)
 }
 
