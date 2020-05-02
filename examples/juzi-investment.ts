@@ -23,7 +23,7 @@ const qa = simpleQnAMaker({
 const bot = new Wechaty({
   name: 'ding-dong-bot',
   puppet: 'wechaty-puppet-padplus',
-  puppetOptions: { token: 'puppet_padplus_07cd62c5a580752b' },
+  puppetOptions: { token: process.env.Puppet_Padplus_Token },
 })
 
 bot.on('scan',    onScan)
@@ -156,4 +156,3 @@ async function jiaruiBot (msg: Message) {
   }
   log.info('done qnamaker')
 }
-
