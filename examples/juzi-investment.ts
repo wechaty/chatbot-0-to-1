@@ -9,8 +9,6 @@ import {
 }                   from 'wechaty'
 
 import {
-  QnAMakerEndpoint,
-  QnAMakerResult,
   simpleQnAMaker,
 }                   from 'simple-qnamaker'
 
@@ -138,10 +136,16 @@ async function jiaruiBot (msg: Message) {
 
   // match valuation questions
   if (answer.length > 0) {
-    const bpLink = 'https://s3.cn-north-1.amazonaws.com.cn/xiaoju-material/public/rc-upload-1588329077509-4_1588329111535_juzibot-bp.pdf'
+
+    // send qa result
     await msg.say(answer[0].answer)
-    await msg.say('这是我们的BP，请查收')
-    await msg.say(FileBox.fromUrl(bpLink, '句子互动BP.pdf'))
+
+    // send bp if have
+    if (process.env.DB_HOST) {
+      await msg.say('这是我们的BP，请查收')
+      await msg.say(FileBox.fromUrl(process.env.DB_HOST, '句子互动BP.pdf'))
+    }
+
   } else {
     // cannot answer the questions
     await msg.say('你的问题超出了我的能力范围，请联系我的老板李佳芮~')

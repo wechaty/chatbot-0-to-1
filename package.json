@@ -27,7 +27,7 @@
     "luis-sdk": "^1.0.1",
     "npm": "^6.4.1",
     "qrcode-terminal": "^0.12.0",
-    "simple-qnamaker": "^0.1.1",
+    "simple-qnamaker": "^0.1.2",
     "ts-node": "^7.0.0",
     "tslint": "^5.20.1",
     "tslint-config-standard": "^8.0.1",
