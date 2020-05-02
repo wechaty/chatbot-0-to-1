@@ -1,25 +1,25 @@
 import {
   Contact,
+  FileBox,
+  log,
   Message,
   ScanStatus,
-  Wechaty,
-  log,
-  FileBox,
   UrlLink,
+  Wechaty,
 }                   from 'wechaty'
 
 import {
-  simpleQnAMaker,
   QnAMakerEndpoint,
   QnAMakerResult,
+  simpleQnAMaker,
 }                   from 'simple-qnamaker'
 
 import { generate } from 'qrcode-terminal'
 
-const qa = new simpleQnAMaker({
-  knowledgeBaseId: '51762d0d-96b0-4888-82f3-a0230bbb8b3d',
+const qa = simpleQnAMaker({
   endpointKey    : 'bc138303-260a-42fa-b4d4-3d69db88922d',
   host           : 'https://juzibot-investment.azurewebsites.net/qnamaker',
+  knowledgeBaseId: '51762d0d-96b0-4888-82f3-a0230bbb8b3d',
 })
 
 const bot = new Wechaty({
