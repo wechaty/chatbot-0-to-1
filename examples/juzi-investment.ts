@@ -23,8 +23,13 @@ const qa = simpleQnAMaker({
 const bot = new Wechaty({
   name: 'ding-dong-bot',
   puppet: 'wechaty-puppet-padplus',
-  puppetOptions: { token: process.env.Puppet_Padplus_Token },
+  puppetOptions: { token: process.env.PUPPET_PADPLUS_TOKEN },
 })
+
+if (!process.env.PUPPET_PADPLUS_TOKEN) {
+  console.log('你需要一个 Padplus Token 才能运行此机器人，点击链接加入作者交流群，了解如何获取token： https://github.com/lijiarui/chatbot-zero-to-one#%E4%BD%9C%E8%80%85%E4%BA%92%E5%8A%A8%E4%BA%A4%E6%B5%81%E7%BE%A4')
+  process.exit(1)
+}
 
 bot.on('scan',    onScan)
 bot.on('login',   onLogin)
@@ -141,9 +146,9 @@ async function jiaruiBot (msg: Message) {
     await msg.say(answer[0].answer)
 
     // send bp if have
-    if (process.env.BPLink) {
+    if (process.env.BP_LINK) {
       await msg.say('这是我们的BP，请查收')
-      await msg.say(FileBox.fromUrl(process.env.BPLink, '句子互动BP.pdf'))
+      await msg.say(FileBox.fromUrl(process.env.BP_LINK, '句子互动BP.pdf'))
     }
 
   } else {
