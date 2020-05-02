@@ -10,6 +10,10 @@
 
 ![Chatbot 0 to 1](docs/images/chatbot-0-to-1.jpg)
 
+### 加入我们
+
+![join us](docs/images/joinus.png)
+
 ## English Introduction
 
 《Chatbot Zero to One: Practice Guide to Conversational Interaction Design》contains 5 parts.
