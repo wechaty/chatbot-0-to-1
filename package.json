@@ -32,7 +32,7 @@
     "tslint": "^5.20.1",
     "tslint-config-standard": "^8.0.1",
     "typescript": "3.1.0-dev.20180731",
-    "wechaty": "^0.29.8",
+    "wechaty": "^0.39.21",
     "wechaty-puppet-padplus": "0.0.150",
     "wechaty-puppet-puppeteer": "^0.18.3"
   },
