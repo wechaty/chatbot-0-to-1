@@ -141,9 +141,9 @@ async function jiaruiBot (msg: Message) {
     await msg.say(answer[0].answer)
 
     // send bp if have
-    if (process.env.DB_HOST) {
+    if (process.env.BPLink) {
       await msg.say('这是我们的BP，请查收')
-      await msg.say(FileBox.fromUrl(process.env.DB_HOST, '句子互动BP.pdf'))
+      await msg.say(FileBox.fromUrl(process.env.BPLink, '句子互动BP.pdf'))
     }
 
   } else {
