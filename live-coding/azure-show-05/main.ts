@@ -12,9 +12,9 @@ import {
 import { simpleQnAMaker } from 'simple-qnamaker'
 
 const qa = simpleQnAMaker({
-  endpointKey: 'bc138303-260a-42fa-b4d4-3d69db88922d',
-  host: 'https://juzibot-investment.azurewebsites.net/qnamaker',
-  knowledgeBaseId: '51762d0d-96b0-4888-82f3-a0230bbb8b3d',
+  endpointKey: 'c1899a89-1886-4125-88b1-ce8b26e16aaf',
+  host: 'https://wechaty-chatbot-for-test.azurewebsites.net/qnamaker',
+  knowledgeBaseId: 'de146be7-cd02-4deb-9da3-e60618396372',
 })
 
 const bot = new Wechaty({
