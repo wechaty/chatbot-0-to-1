@@ -2,7 +2,7 @@
 
 ## 简介
 
-- 1st Edition: Mar 2020 - [Chatbot从0到1：对话式交互设计实践指南](https://item.jd.com/12630213.html)
+- 1st Edition: Mar 2020 - [Chatbot从0到1：对话式交互设计实践指南](https://item.jd.com/12630213.html) (Amazon)[https://www.amazon.com/Chatbot%E4%BB%8E0%E5%88%B01%EF%BC%9A%E5%AF%B9%E8%AF%9D%E5%BC%8F%E4%BA%A4%E4%BA%92%E8%AE%BE%E8%AE%A1%E5%AE%9E%E8%B7%B5%E6%8C%87%E5%8D%97-%E5%8D%9A%E6%96%87%E8%A7%86%E7%82%B9%E5%87%BA%E5%93%81-%E6%9D%8E%E4%BD%B3%E8%8A%AE%EF%BC%8C%E6%9D%8E%E5%8D%93%E6%A1%93/dp/7121384841/)
 - 2nd Edition: Nov 2023 - [Chatbot从0到1：手把手落地大模型应用](https://juzibot.com/chatbot/practice-guide)
 
 《Chatbot从0到1：对话式交互设计实践指南》内容共5部分。第1部分从人工智能的发展带动对话式交互引出Chatbot的应用场景及其分类；第2部分和第3部分从需求分析、流程设计、数据处理、对话脚本撰写、系统搭建、对话任务测评、平台渠道集成、运营反馈等方面，对Chatbot的整个生命周期进行了详细分析和介绍；第4部分通过案例分析，对Chatbot进行了实践；第5部分总结了目前对话式交互的局限性，并展望了基于人工智能发展Chatbot的机会。
